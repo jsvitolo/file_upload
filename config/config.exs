@@ -9,6 +9,11 @@ use Mix.Config
 config :hello,
   ecto_repos: [Hello.Repo]
 
+config :hello, :aws,
+  access_key_id: System.get_env("AWS_ACCESS_KEY_ID"),
+  secret_key: System.get_env("AWS_SECRET_ACCESS_KEY"),
+  bucket_name: System.get_env("BUCKET_NAME")
+
 # Configures the endpoint
 config :hello, HelloWeb.Endpoint,
   url: [host: "localhost"],

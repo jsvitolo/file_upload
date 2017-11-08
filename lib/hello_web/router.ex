@@ -23,4 +23,10 @@ defmodule HelloWeb.Router do
   # scope "/api", HelloWeb do
   #   pipe_through :api
   # end
+
+  scope "/api", HelloWeb do
+    pipe_through :api
+
+    resources "/upload_signatures", UploadSignatureController, only: [:create]
+  end
 end
